@@ -1,0 +1,20 @@
+//var colors
+//$wrapper_bgc: ; todo set wrapper bgc
+//$footer_bgc: ; todo set footer bgc
+
+//var proportions
+//$container_width: ; todo set container width
+//$font-size: ; todo set font-size
+//$footer_height: ; todo set footer height
+
+//plugins
+//@import "../bower/normalize-css/normalize.css"; todo add normalize
+
+//adjustments
+@import "_misc/mixins";
+@import "_misc/adjustments";
+@import "_misc/fonts";
+
+////styles
+// @import "sections/header";
+// @import "sections/footer";

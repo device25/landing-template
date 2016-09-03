@@ -1,0 +1,4 @@
+.idea
+_dev/bower
+node_modules
+prod

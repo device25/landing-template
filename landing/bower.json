@@ -1,0 +1,6 @@
+{
+//  "name": "", todo add name
+  "dependencies": {
+    "normalize-css": "^4.2.0"
+  }
+}
