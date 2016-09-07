@@ -1,5 +1,5 @@
 ## Installation
 
-npm i
-bower i
+npm i  
+bower i  
 gulp
