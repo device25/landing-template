@@ -8,13 +8,13 @@
 //$footer_height: ; todo set footer height
 
 //plugins
-//@import "../bower/normalize-css/normalize.css"; todo add normalize
+@import "../../node_modules/normalize.css/normalize.css";
 
 //adjustments
 @import "_misc/mixins";
 @import "_misc/adjustments";
 @import "_misc/fonts";
 
-////styles
+//styles
 // @import "sections/header";
 // @import "sections/footer";

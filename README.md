@@ -1,5 +1,4 @@
 ## Installation
 
-npm i  
-bower i  
-gulp
+npm i
+npm start
