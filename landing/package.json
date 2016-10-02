@@ -1,4 +1,6 @@
 {
+  "name": "Landing Template",
+  "version": "1.0.0",
   "devDependencies": {
     "browser-sync": "^2.13.0",
     "gulp": "^3.8.11",

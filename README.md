@@ -1,4 +1,6 @@
 ## Installation
 
-npm i
-npm start
+clone  
+`cd landing`  
+`npm i`  
+`npm start`
