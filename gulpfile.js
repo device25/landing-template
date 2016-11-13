@@ -108,19 +108,19 @@ gulp.task('build', [
 ]);
 
 gulp.task('watch', function () {
-  watch([path.watch.html], function (event, cb) {
+  watch([path.watch.html], function () {
     gulp.start('html:build');
   });
-  watch([path.watch.css], function (event, cb) {
+  watch([path.watch.css], function () {
     gulp.start('css:build');
   });
-  watch([path.watch.fonts], function (event, cb) {
+  watch([path.watch.fonts], function () {
     gulp.start('fonts:build');
   });
-  watch([path.watch.img], function (event, cb) {
+  watch([path.watch.img], function () {
     gulp.start('img:build');
   });
-  watch([path.watch.js], function (event, cb) {
+  watch([path.watch.js], function () {
     gulp.start('js:build');
   });
 });

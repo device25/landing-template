@@ -1,5 +1,5 @@
 {
-  "name": "Landing Template",
+  "name": "landing-template",
   "version": "1.0.0",
   "devDependencies": {
     "browser-sync": "^2.13.0",

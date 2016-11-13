@@ -1,6 +1,5 @@
 ## Installation
 
 clone  
-`cd landing`  
-`npm i`  
+`npm i` || `yarn`  
 `npm start`
