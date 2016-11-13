@@ -1,6 +1,6 @@
 {
   "name": "landing-template",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "devDependencies": {
     "browser-sync": "^2.13.0",
     "gulp": "^3.8.11",
@@ -16,7 +16,7 @@
     "rimraf": "^2.3.1"
   },
   "dependencies": {
-    "normalize.css": "^4.2.0"
+    "normalize.css": "^5.0.0"
   },
   "scripts": {
     "start": "gulp"

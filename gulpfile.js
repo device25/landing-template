@@ -49,7 +49,7 @@ var config = {
       server: {
         baseDir: "prod"
       },
-      // tunnel: '', todo add tunnel name
+      tunnel: 'device',
       browser: 'Google Chrome',
       open: 'tunnel'
     };

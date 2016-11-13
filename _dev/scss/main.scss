@@ -1,11 +1,11 @@
 //var colors
-//$wrapper_bgc: ; todo set wrapper bgc
-//$footer_bgc: ; todo set footer bgc
+$wrapper_bgc: #94bbd2;
+$footer_bgc: darken($wrapper_bgc, 50%);
 
 //var proportions
-//$container_width: ; todo set container width
-//$font-size: ; todo set font-size
-//$footer_height: ; todo set footer height
+$container_width: 1024px;
+$font-size: 16px;
+$footer_height: 50px;
 
 //plugins
 @import "/node_modules/normalize.css/normalize.css";
