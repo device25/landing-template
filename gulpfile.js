@@ -1,18 +1,19 @@
 'use strict';
 
-var gulp = require('gulp'),
-    watch = require('gulp-watch'),
-    prefixer = require('gulp-autoprefixer'),
-    uglify = require('gulp-uglify'),
-    sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps'),
-    rigger = require('gulp-rigger'),
-    cleanCSS = require('gulp-clean-css'),
-    imagemin = require('gulp-imagemin'),
-    pngquant = require('imagemin-pngquant'),
-    rimraf = require('rimraf'),
-    browserSync = require('browser-sync'),
-    reload = browserSync.reload;
+var cssnext = require('postcss-cssnext');
+var gulp = require('gulp');
+var postcss = require('gulp-postcss');
+var watch = require('gulp-watch');
+var uglify = require('gulp-uglify');
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
+var rigger = require('gulp-rigger');
+var cleanCSS = require('gulp-clean-css');
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
+var rimraf = require('rimraf');
+var browserSync = require('browser-sync');
+var reload = browserSync.reload;
 
 var path = {
   dest: {
@@ -40,63 +41,67 @@ var path = {
 };
 
 var config = {
-      server: {
-        baseDir: "prod"
-      },
-      open: false
-    },
-    configTunnel = {
-      server: {
-        baseDir: "prod"
-      },
-      tunnel: 'device',
-      browser: 'Google Chrome',
-      open: 'tunnel'
-    };
+  server: {
+    baseDir: "prod"
+  },
+  open: false
+};
+var configTunnel = {
+  server: {
+    baseDir: "prod"
+  },
+  tunnel: 'device',
+  browser: 'Google Chrome',
+  open: 'tunnel'
+};
 
 gulp.task('html:build', function () {
   gulp.src(path.src.html)
-      .pipe(rigger())
-      .pipe(gulp.dest(path.dest.html))
-      .pipe(reload({stream: true}));
+    .pipe(rigger())
+    .pipe(gulp.dest(path.dest.html))
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('js:build', function () {
   gulp.src(path.src.js)
-      .pipe(rigger())
-      .pipe(sourcemaps.init())
-      .pipe(uglify())
-      .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest(path.dest.js))
-      .pipe(reload({stream: true}));
+    .pipe(rigger())
+    .pipe(sourcemaps.init())
+    .pipe(uglify())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(path.dest.js))
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('css:build', function () {
-  gulp.src(path.src.css)
-      .pipe(sourcemaps.init())
-      .pipe(sass().on('error', sass.logError))
-      .pipe(prefixer())
-      .pipe(cleanCSS())
-      .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest(path.dest.css))
-      .pipe(reload({stream: true}));
+  var processors = [
+    cssnext
+  ];
+
+  return gulp.src(path.src.css)
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(postcss(processors))
+    .pipe(cleanCSS())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(path.dest.css))
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('img:build', function () {
   gulp.src(path.src.img)
-      .pipe(imagemin({
-        progressive: true,
-        svgoPlugins: [{removeViewBox: false}],
-        use: [pngquant()],
-        interlaced: true
-      }))
-      .pipe(gulp.dest(path.dest.img))
-      .pipe(reload({stream: true}));
+    .pipe(imagemin({
+      progressive: true,
+      svgoPlugins: [{removeViewBox: false}],
+      use: [pngquant()],
+      interlaced: true
+    }))
+    .pipe(gulp.dest(path.dest.img))
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('fonts:build', function () {
   gulp.src(path.src.fonts)
-      .pipe(gulp.dest(path.dest.fonts));
+    .pipe(gulp.dest(path.dest.fonts));
 });
 
 gulp.task('build', [

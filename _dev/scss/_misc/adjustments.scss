@@ -5,7 +5,7 @@
 html {
   width: 100%;
   height: 100%;
-  font-size: $font-size;
+  font-size: var(--font-size);
 }
 
 body {
@@ -37,31 +37,31 @@ p {
 }
 
 .wrapper {
-  min-width: $container_width + 20; //static. del for adaptive
+  min-width: calc(var(--container_width) + 20); //static. del for adaptive
   min-height: 100%;
   height: auto;
-  margin-bottom: -$footer_height;
-  background-color: $wrapper_bgc;
+  margin-bottom: -(var(--footer_height));
+  background-color: var(--wrapper_bgc);
   overflow: hidden;
   &:after {
-    content: "";
+    content: '';
     display: block;
-    height: $footer_height;
+    height: var(--footer_height);
     margin-top: 20px; //for adaptive "rem($px)"
   }
 }
 
 .footer {
-  min-width: $container_width + 20; //static. del for adaptive
-  height: $footer_height;
-  background-color: $footer_bgc;
+  min-width: calc(var(--container_width) + 20); //static. del for adaptive
+  height: var(--footer_height);
+  background-color: var(--footer_bgc);
 }
 
 .container {
-  width: $container_width;
+  width: var(--container_width);
   margin: auto;
-  // @include laptop {        //adaptive
-  // 	width: 100%;
-  // 	padding: 0 3%;
-  // }
+  //@include laptop { //adaptive
+  //  width: 100%;
+  //  padding: 0 3%;
+  //}
 }

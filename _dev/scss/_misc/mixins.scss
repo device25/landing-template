@@ -8,7 +8,7 @@
 
 //responsive
 @function rem($px) {
-  @return $px / $font-size + 0rem;
+  @return $px / var(--font-size) + 0rem;
 }
 
 @mixin desktop {
