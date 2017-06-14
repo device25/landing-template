@@ -17,38 +17,38 @@ var reload = browserSync.reload;
 
 var path = {
   dest: {
-    html: 'prod/',
-    css: 'prod/css/',
-    js: 'prod/js/',
-    img: 'prod/img/',
-    fonts: 'prod/fonts/'
+    html: 'dist/',
+    css: 'dist/css/',
+    js: 'dist/js/',
+    img: 'dist/img/',
+    fonts: 'dist/fonts/'
   },
   src: {
-    html: '_dev/*.html',
-    css: '_dev/scss/main.scss',
-    js: '_dev/js/main.js',
-    img: '_dev/img/**/*.*',
-    fonts: '_dev/fonts/**/*.*'
+    html: 'src/*.html',
+    css: 'src/scss/main.scss',
+    js: 'src/js/main.js',
+    img: 'src/img/**/*.*',
+    fonts: 'src/fonts/**/*.*'
   },
   watch: {
-    html: '_dev/**/*.html',
-    css: '_dev/scss/**/*.scss',
-    js: '_dev/js/**/*.js',
-    img: '_dev/img/**/*.*',
-    fonts: '_dev/fonts/**/*.*'
+    html: 'src/**/*.html',
+    css: 'src/scss/**/*.scss',
+    js: 'src/js/**/*.js',
+    img: 'src/img/**/*.*',
+    fonts: 'src/fonts/**/*.*'
   },
-  clean: 'prod'
+  clean: 'dist'
 };
 
 var config = {
   server: {
-    baseDir: "prod"
+    baseDir: "dist"
   },
   open: false
 };
 var configTunnel = {
   server: {
-    baseDir: "prod"
+    baseDir: "dist"
   },
   tunnel: 'device',
   browser: 'Google Chrome',
