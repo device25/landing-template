@@ -1,9 +1,11 @@
 {
   "name": "landing-template",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "license": "MIT",
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "commit": "git-cz",
+    "release": "standard-version"
   },
   "config": {
     "commitizen": {
