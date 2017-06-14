@@ -1,5 +1,7 @@
 ## Installation
 
-clone  
-`npm i` || `yarn`  
-`npm start`
+```
+git clone  
+yarn  
+yarn start
+```

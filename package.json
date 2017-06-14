@@ -1,9 +1,20 @@
 {
   "name": "landing-template",
   "version": "1.2.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "gulp"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "devDependencies": {
-    "browser-sync": "^2.13.0",
-    "gulp": "^3.8.11",
+    "browser-sync": "2.18.12",
+    "commitizen": "2.9.6",
+    "cz-conventional-changelog": "2.0.0",
+    "gulp": "3.9.1",
     "gulp-clean-css": "^2.0.11",
     "gulp-imagemin": "^2.2.1",
     "gulp-postcss": "^6.2.0",
@@ -14,12 +25,10 @@
     "gulp-watch": "^4.1.1",
     "imagemin-pngquant": "^4.0.0",
     "postcss-cssnext": "^2.8.0",
-    "rimraf": "^2.3.1"
+    "rimraf": "^2.3.1",
+    "standard-version": "4.2.0"
   },
   "dependencies": {
-    "normalize.css": "^5.0.0"
-  },
-  "scripts": {
-    "start": "gulp"
+    "normalize.css": "7.0.0"
   }
 }
